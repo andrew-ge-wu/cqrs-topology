@@ -115,7 +115,6 @@ public class RepositoryBolt extends BaseRichBolt {
             while (storingQueue.size() > 0) {
                 Key objectId = storingQueue.poll();
                 LOGGER.info("Storing profile" + objectId);
-
             }
         }
     }

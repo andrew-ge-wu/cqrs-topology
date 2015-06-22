@@ -10,7 +10,4 @@ public class Constants {
     public static final String FIELD_PAYLOAD = "payload";
     public static final String FIELD_PARTITION = "partition";
     public static final String FIELD_RESULT = "result";
-    public static final String STREAM_WRITE = "stream_write";
-
-
 }

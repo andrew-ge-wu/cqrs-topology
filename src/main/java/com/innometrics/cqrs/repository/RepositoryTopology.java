@@ -15,11 +15,15 @@ import com.innometrics.cqrs.repository.model.ProfileCommandMessage;
 import com.innometrics.key.ProfileKey;
 import com.innometrics.util.JacksonUtil;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author andrew, Innometrics
  */
 public class RepositoryTopology {
+    private static final Logger LOGGER = LoggerFactory.getLogger(RepositoryTopology.class);
+
     private final LocalDRPC drpcServer;
     private final LocalCluster cluster;
 
@@ -87,7 +91,7 @@ public class RepositoryTopology {
             // System.out.println("Print!!!" + result);
 
         }
-        System.out.println("rps:" + (1000 / ((System.currentTimeMillis() - start) / 6000)));
+        LOGGER.info("rps:" + (1000 / ((System.currentTimeMillis() - start) / 6000)));
         repositoryTopology.cluster.shutdown();
         repositoryTopology.drpcServer.shutdown();
     }
